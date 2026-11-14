@@ -1,0 +1,52 @@
+/* Declarative Migrations shared design-token contract, v1.
+   Import this file once from product apps; class names remain app-owned. */
+:root {
+  color-scheme: light;
+  --declmig-color-surface: #ffffff;
+  --declmig-color-surface-subtle: #eff6fb;
+  --declmig-color-text: #102a43;
+  --declmig-color-muted: #334e68;
+  --declmig-color-primary: #084c83;
+  --declmig-color-primary-on: #ffffff;
+  --declmig-color-border: #829ab1;
+  --declmig-color-success: #146c43;
+  --declmig-color-danger: #b42318;
+  --declmig-color-focus: #084c83;
+  --declmig-space-1: 0.25rem;
+  --declmig-space-2: 0.5rem;
+  --declmig-space-3: 0.75rem;
+  --declmig-space-4: 1rem;
+  --declmig-radius-sm: 0.25rem;
+  --declmig-radius-md: 0.5rem;
+}
+
+/* Explicit theme wins over the operating system preference. */
+:root[data-declmig-theme="dark"] {
+  color-scheme: dark;
+  --declmig-color-surface: #14283b;
+  --declmig-color-surface-subtle: #1c354c;
+  --declmig-color-text: #f3f8fc;
+  --declmig-color-muted: #cbdae6;
+  --declmig-color-primary: #a8d4ff;
+  --declmig-color-primary-on: #14283b;
+  --declmig-color-border: #7192ad;
+  --declmig-color-success: #a4e5bf;
+  --declmig-color-danger: #ffc1b9;
+  --declmig-color-focus: #a8d4ff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-declmig-theme="light"]):not([data-declmig-theme="dark"]) {
+    color-scheme: dark;
+    --declmig-color-surface: #14283b;
+    --declmig-color-surface-subtle: #1c354c;
+    --declmig-color-text: #f3f8fc;
+    --declmig-color-muted: #cbdae6;
+    --declmig-color-primary: #a8d4ff;
+    --declmig-color-primary-on: #14283b;
+    --declmig-color-border: #7192ad;
+    --declmig-color-success: #a4e5bf;
+    --declmig-color-danger: #ffc1b9;
+    --declmig-color-focus: #a8d4ff;
+  }
+}
